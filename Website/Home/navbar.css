@@ -1,0 +1,147 @@
+:root { 
+    --gray-bg: #4d4d4d;
+    --yellow-bg: #f39c12;
+    --nav-bg: #000000e6;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }  
+
+  .navbar {
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color 0.3s, padding 0.3s;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .navbar h1 {
+    font-size: 24px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    margin: 0 30px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: var(--yellow-bg);
+  }
+  
+  .navbar.active {
+    left: 0;
+  }
+  
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+  }
+  
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+      position: fixed;
+      bottom: 0;
+      left: -300px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding-top: 60px;
+      transition: left 0.3s;
+      overflow-y: auto;
+    }
+  
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      flex-direction: column;
+      max-height: 100%;
+      overflow-y: auto;
+    }
+  
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+      padding: 10px 20px;
+    }
+  
+    .navbar ul li a:hover {
+      color: var(--yellow-bg);
+    }
+
+    .navbar ul li:last-child {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .menu-icon {
+      background-color: var(--nav-bg);
+      width: 100%;
+      display: flex;
+      top: 0;
+      left: 0;
+    }
+    
+  }
+  
+  @media screen and (min-width: 768px) {
+    .menu-icon {
+      opacity: 0;
+    }
+  
+    .navbar ul li {
+      margin: 20px 15px;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .navbar {
+      padding-top: 20px;
+    }
+  }
+  
